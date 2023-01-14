@@ -1,0 +1,328 @@
+1)
+#include<iostream>
+using namespace std;
+class Complex
+{
+    private:
+        int real;
+        int img;
+    public:
+        void set_Val(int r,int i)
+        {
+            real=r;
+            img=i;
+        }
+        void print()
+        {
+            cout<<"\nreal="<<real<<" imaginary="<<img;
+        }
+};
+int main()
+{
+    Complex c;
+    c.set_Val(5,2);
+    c.print();
+    return 0;
+}
+
+
+
+2)
+#include<iostream>
+using namespace std;
+class Time
+{
+    private:
+        int hr;
+        int minute;
+        int sec;
+    public:
+        void setTime(int h,int m,int s)
+        {
+            hr=h;
+            minute=m;
+            sec=s;
+        }
+        void showTime()
+        {
+            cout<<"\nTime is  "<<hr<<"hr "<<minute<<"min "<<sec<<"sec";
+        }
+};
+int main()
+{
+    Time t;
+    t.setTime(3,45,20);
+    t.showTime();
+    return 0;
+}
+
+
+
+3)
+#include<iostream>
+using namespace std;
+class Factorial
+{
+    private:
+        int num;
+        int fact;
+    public:
+        void fun(int n)
+        {
+            num=n;
+            fact=1;
+            for(int i=n;i>1;i--)
+            {
+                fact=fact*i;
+            }
+            cout<<"factorial of "<<num<<" is "<<fact;
+        }
+};
+int main()
+{
+    Factorial ob;
+    ob.fun(6);
+    return 0;
+}
+
+
+
+4)
+#include<iostream>
+using namespace std;
+class LargestNumber
+{
+    private:
+        int num1;
+        int num2;
+        int num3;
+        int largest;
+    public:
+        void fun(int n1,int n2,int n3)
+        {
+            num1=n1;
+            num2=n2;
+            num3=n3;
+            if(num1>num2)
+            {
+                if(num1>num3)
+                    cout<<num1;
+                else
+                    cout<<num3;
+            }
+            else
+            {
+                if(num2>num3)
+                    cout<<num2;
+                else cout<<num3;
+            }
+        }
+};
+int main()
+{
+    LargestNumber ob;
+    ob.fun(34,-89,5);
+    return 0;
+}
+
+
+
+5)
+#include<iostream>
+using namespace std;
+class ReverseNumber
+{
+    private:
+        int num;
+        int rev;
+    public:
+        int findReverse(int n)
+        {
+            num=n;
+            int rem;
+            while(n!=0)
+            {
+                rem=n%10;
+                rev=rev*10+rem;
+                n=n/10;
+            }
+            cout<<"Reverse of "<<num<<" is "<<rev;
+        }
+};
+int main()
+{
+    ReverseNumber ob;
+    ob.findReverse(5467109);
+    return 0;
+}
+
+
+
+
+6)
+#include<iostream>
+using namespace std;
+class Square
+{
+    private:
+        int num;
+        int sq;
+    public:
+        void findSquare(int n)
+        {
+            num=n;
+            sq=num*num;
+            cout<<"\nSquare of "<<num<<" is "<<sq;
+            static int Count=1;
+            cout<<"\nfindSquare function called "<<Count<<" times";
+            Count++;
+        }
+};
+int main()
+{
+    Square ob;
+    ob.findSquare(5);
+    ob.findSquare(6);
+    ob.findSquare(7);
+    return 0;
+}
+
+
+
+7)
+#include<iostream>
+using namespace std;
+class Greatest
+{
+    private:
+        int num1;
+        int num2;
+        int num3;
+    public:
+        void findLargest(int n1,int n2,int n3)
+        {
+            num1=n1;
+            num2=n2;
+            num3=n3;
+            if(num1>num2)
+            {
+                if(num1>num3)
+                    cout<<num1;
+                else
+                    cout<<num3;
+            }
+            else
+            {
+                if(num2>num3)
+                    cout<<num2;
+                else
+                    cout<<num3;
+            }
+        }
+
+};
+int main()
+{
+    Greatest ob;
+    ob.findLargest(7,90,-54);
+    return 0;
+}
+
+
+
+8)
+#include<iostream>
+using namespace std;
+class Rectangle
+{
+    private:
+        int length,breadth,area;
+    public:
+        void findArea(int l,int b)
+        {
+            length=l;
+            breadth=b;
+            area=length*breadth;
+        }
+        void displayArea()
+        {
+            cout<<"Area of rectangle with length "<<length<<" and breadth "<<breadth<<" ="<<area;
+        }
+};
+int main()
+{
+    Rectangle ob;
+    ob.findArea(5,6);
+    ob.displayArea();
+    return 0;
+}
+
+
+
+
+9)
+#include<iostream>
+using namespace std;
+class Circle
+{
+    private:
+        int radius;
+        float area;
+    public:
+        void calRadius(int r)
+        {
+            radius=r;
+            area=3.14*radius*radius;
+        }
+        void displayArea()
+        {
+            cout<<"Area of circle with radius "<<radius<<" = "<<area;
+        }
+};
+int main()
+{
+    Circle ob;
+    ob.calRadius(18);
+    ob.displayArea();
+}
+
+
+
+
+10)
+#include<iostream>
+using namespace std;
+class Area
+{
+    private:
+        int radius;
+        int side;
+        int length,breadth;
+    public:
+        void area_of_circle(int r)
+        {
+            radius=r;
+            cout<<"Area of circle with radius "<<radius<<" = "<<3.14*radius*radius;
+        }
+        void area_of_square(int s)
+        {
+            side=s;
+            cout<<"\nArea of square with side "<<side<<" = "<<side*side;
+        }
+        void area_of_rectangle(int l,int b)
+        {
+            length=l;
+            breadth=b;
+            cout<<"\nArea of rectangle with length = "<<length<<" and breadth = "<<breadth<<" = "<<length*breadth;
+        }
+};
+int main()
+{
+    Area ob1,ob2,ob3;
+    ob1.area_of_circle(5);
+    ob2.area_of_square(3);
+    ob3.area_of_rectangle(6,7);
+    return 0;
+}
+
+
